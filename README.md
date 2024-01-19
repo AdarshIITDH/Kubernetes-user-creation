@@ -42,7 +42,7 @@ cat <<EOF | kubectl apply -f -
 apiVersion: certificates.k8s.io/v1
 kind: CertificateSigningRequest
 metadata:
-  name: john
+  name: adarsh
 spec:
   request: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlHZU1GSUNBUUF3SHpFT01Bd0dBMVVFQXd3RmFtOW9iaXd4RFRBTEJnTlZCQW9NQkdWa2FYUXdLakFGQmdNcgpaWEFESVFEbk9nYXEzSEcyMkw1dFROZ0JaQ1lHYkJiSjdXQ05BTmE2aWhsNll0NWFkNkFBTUFVR0F5dGxjQU5CCkFPeVJaZlpKY2c3eE90eHBjUmFqZmlySk9WcVkvaE9CQldneEJubERFek4rbXpJRm12MkU5czNoaXBQZjBOYk8KMkNrR0pNR0NhOXJabStVRHowelhqZ009Ci0tLS0tRU5EIENFUlRJRklDQVRFIFJFUVVFU1QtLS0tLQo=
   signerName: kubernetes.io/kube-apiserver-client
@@ -55,6 +55,14 @@ EOF
 
 
 3: Sign the certificate using the cluster certificate authority.
+
+```
+kubectl get csr
+```
+
+```
+kubectl certificate approve adarsh
+```
 
 4: Create a configuration specific to the user.
 
