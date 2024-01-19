@@ -64,6 +64,11 @@ kubectl get csr
 kubectl certificate approve adarsh
 ```
 
+```
+kubectl describe csr/adarsh
+```
+
+
 4: Create a configuration specific to the user.
 
 5: Add RBAC rules for the user or their group.
